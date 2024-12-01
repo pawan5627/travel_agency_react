@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 // Initialize dotenv for environment variables
 dotenv.config();
@@ -13,7 +14,10 @@ const app = express();
 // Middleware setup
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(express.json());
+
+
 // Database connection
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected'))

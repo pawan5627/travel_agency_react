@@ -17,10 +17,12 @@ const generateToken = (user, statusCode, res) => {
     }
 
     // //save token into a cookie, the token expires after a day
-    // res.cookie('token', token, {
-    //     expires: new Date(Date.now() + 1 * 24 * 60 * 60 * 1000),
-    //     httpOnly: true
-    // })
+    res.cookie("token", token, {
+        httpOnly: true,   // To prevent access via JS
+        secure: process.env.NODE_ENV === 'production',  // If using HTTPS
+        expires: new Date(Date.now() + 3600000), // Set expiry (optional)
+      });
+      
 
     const { _id, name, email, phonenumber, deliveryaddress, role, createdAt, avatar } = user
 

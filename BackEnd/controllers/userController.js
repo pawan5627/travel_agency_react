@@ -5,6 +5,12 @@ const catchAsyncErrors = require('../Middleware/catchAsyncErrors');
 const cloudinary = require('cloudinary')
 const generateToken = require('../utils/jwtToken');
 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 exports.signup = catchAsyncErrors(async (req, res) => {
     const errors = validationResult(req)
 
@@ -17,8 +23,8 @@ exports.signup = catchAsyncErrors(async (req, res) => {
     const { name, phonenumber, deliveryaddress, email, password, avatar } = req.body;
 
   
-    if (req.body.avatar !== '') {
-        const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    if (avatar) {
+        const result = await cloudinary.v2.uploader.upload(avatar, {
             folder: 'avatars',
             width: 800,
             crop: "scale"
@@ -55,45 +61,50 @@ exports.signup = catchAsyncErrors(async (req, res) => {
             email,
             password
         })
-        user.save((err, newuser) => {
-            if (err) {
-                return res.status(400).json({
-                    error: "Error!"
-                })
-            }
-            generateToken(newuser, 200, res)
-            
-        })
+        await user.save();
+        generateToken(user, 200, res)
+
     }
 })
 
+exports.signin = async (req, res) => {
+    const { email, password } = req.body;
+    
+    try {
+        // Use await to wait for the result of findOne
+        const user = await User.findOne({ email });
 
-exports.signin = (req, res) => {
-    const { email, password } = req.body
-
-    User.findOne({ email }, (err, user) => {
-        if (err || !user) {
+        // If no user is found or an error occurs
+        if (!user) {
             return res.status(400).json({
                 error: "Email Address not found"
-            })
+            });
         }
+
+        // Check if the user's account is inactive
         if (user.account_status === "inactive") {
             return res.status(400).json({
                 error: "This account has been deleted"
-            })
+            });
         }
-        // check if user's email and password are correct       
+
+        // Check if the provided password is correct
         if (!user.authenticate(password)) {
             return res.status(400).json({
                 error: "Email Address or Password is incorrect"
-            })
+            });
         }
 
-        generateToken(user, 200, res)
+        // Generate and send the token if everything is valid
+        generateToken(user, 200, res);
 
-       
-    })
-}
+    } catch (err) {
+        // Catch any other unexpected errors
+        return res.status(500).json({
+            error: "Internal Server Error"
+        });
+    }
+};
 
 exports.signout = (req, res) => {
     // res.clearCookie("token")

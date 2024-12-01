@@ -3,6 +3,12 @@ const Role = require("../models/Role");
 // Create a new role
 exports.createRole = async (req, res) => {
     try {
+        res.cookie("token", token, {
+            httpOnly: true,   // To prevent access via JS
+            secure: process.env.NODE_ENV === 'production',  // If using HTTPS
+            expires: new Date(Date.now() + 3600000), // Set expiry (optional)
+          });
+          
         const { name, description } = req.body;
         const newRole = new Role({ name, description });
         await newRole.save();
