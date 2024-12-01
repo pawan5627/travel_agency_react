@@ -1,0 +1,431 @@
+
+    /* Custom Colors */
+    :root {
+      --primary-color: #4db8ff;
+      --secondary-color: #0099cc;
+      --accent-color: #ffffff;
+      --bg-color: #f8f8f8;
+      --hover-color: #33ccff;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-color);
+    }
+
+    /* Header (Sticky Navbar) */
+    .sticky-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent */
+      backdrop-filter: blur(10px);
+      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease;
+    }
+
+    .sticky-navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.8); /* Darker on scroll */
+    }
+/* Search Bar */
+/* Search Bar Container (Navbar) */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centering the content horizontally */
+  align-items: center; /* Optional: Center vertically if needed */
+  position: relative; /* Ensure dropdown aligns relative to the navbar */
+  width: 100%;
+  padding: 10px 0; /* Adjust padding as needed */
+}
+
+/* Search Bar */
+.search-bar {
+  transition: all 0.3s ease;
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+  border-radius: 30px; /* Fully rounded corners */
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  left: 50%; /* Align it horizontally to the center of the search bar */
+   transform: translateX(17%);  
+}
+
+/* Input field within the search bar */
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  width: 100%;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 20px;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Lighter placeholder color */
+}
+
+/* Search Button */
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Search Bar Focus Effect */
+.search-bar:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Search Results Dropdown */
+#search-results {
+  position: absolute;
+  top: 100%; /* Position directly below the search bar */
+  left: 50%; /* Align it horizontally to the center of the search bar */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  width: 300px; /* Fixed width */
+  background-color: rgba(0, 0, 0, 0.6); /* Dark, semi-transparent background */
+  border: 1px solid #000000;
+  border-radius: 8px; /* Rounded corners for the dropdown */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.526); /* Soft shadow around the dropdown */
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 50;
+  color: #ffffff;
+  display: none; /* Hidden by default */
+  margin-top: 8px; /* Space between search bar and dropdown */
+}
+
+/* Dropdown List Item Styling */
+#search-results li {
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, padding-left 0.2s ease;
+}
+
+#search-results li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle highlight on hover */
+  padding-left: 10px; /* Slight left shift on hover */
+}
+
+/* Hover Text Effect */
+#search-results li:active {
+  transform: translateX(2px);
+}
+
+
+    /* Hero Section (Slider) */
+      
+  .hero-section {
+    position: relative;
+  }
+  
+  .hero-section img {
+    filter: brightness(50%);
+  }
+  
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .hero-section p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+    .banner {
+      height: 90vh;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: var(--accent-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .banner-overlay h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .banner-overlay p {
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+
+    .banner-overlay a {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner-overlay a:hover {
+      background-color: var(--hover-color);
+    }
+
+    /* Slider */
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Featured destination */
+    .destination:hover .destination-image {
+      transform: scale(1.05);
+      filter: brightness(80%);
+    }
+
+    .destination {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .destination-image {
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .hover-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--accent-color);
+      font-size: 1.25rem;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .destination:hover .hover-text {
+      opacity: 1;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #2f2f2f;
+      color: var(--accent-color);
+      padding: 1.5rem 0rem;
+      text-align: center;
+      
+    }
+
+    .footer a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Testimonial Section */
+    .testimonial {
+      background-color: #f1f1f1;
+      padding: 3rem 1rem;
+    }
+
+    .testimonial-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-rating {
+      color: #ff9900;
+    }
+    /* Secondary Footer */
+    .secondary-footer {
+      background-color: #333;
+      color: var(--accent-color);
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+      display: flex;               /* Use Flexbox for centering */
+      flex-direction: column;      /* Align children vertically */
+      align-items: center;  
+               /* Center horizontally */
+    justify-content: center;     margin-left: auto;           /* Horizontally center by auto margins */
+    margin-right: auto;  
+    }
+
+    .secondary-footer .footer-logo {
+      width: auto;
+      height: 80px;
+    }
+
+    .secondary-footer .footer-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .secondary-footer .footer-menu li a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .secondary-footer .footer-menu li a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-contact p {
+      margin: 0.5rem 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+/* Container for the Destination dropdown */
+.relative {
+  position: relative;
+}
+
+/* Dropdown menu styling */
+#destination-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Align below the parent */
+  left: 0;
+  width: auto; /* Set the width of the dropdown */
+  background-color: #00000000; /* Dark gray */
+  color: white;
+  border-radius: 8px; /* Rounded corners */
+  /* Soft shadow for depth */
+  padding: 5px 0;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Prevents interaction */
+  transform: translateY(10px); /* Slight offset for smooth transition */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover state for the parent item */
+.relative:hover #destination-dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Reset to original position */
+}
+
+/* Dropdown links */
+#destination-dropdown li {
+  padding: 10px 20px;
+  background-color: #0000005e;
+  font-size: 1rem; /* Slightly larger font */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+#destination-dropdown li:hover {
+  background-color: #000000a9;
+  text-decoration: underline;
+  text-shadow: 1px 1px 10px rgb(255, 255, 255);  /* Lighter gray background on hover */
+  border-radius: 6px; /* Slight roundness on hover */
+}
+
+/* Active link style (optional) */
+#destination-dropdown li:active {
+  background-color: #2d3748; /* Same as the background color */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transition for hover effects */
+#destination-dropdown li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+/* Styling the parent Destination item (optional) */
+.relative > a {
+  padding: 10px 10px;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for parent link */
+a:hover {
+  text-decoration: underline; /* Lighten the color on hover */
+}
+
+/* Transition for the whole dropdown */
+#destination-dropdown {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}

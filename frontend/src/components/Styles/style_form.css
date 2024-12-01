@@ -1,0 +1,145 @@
+/* Custom Styles for the Booking Page */
+
+/* Overall Page Layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7fafc; /* Tailwind gray-50 background */
+}
+
+/* Styling the form container */
+
+
+/* Styling the text fields */
+ input[type="email"], input[type="tel"], input[type="number"], select, textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db; /* Tailwind gray-300 */
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px; /* Set a max width to make fields more manageable */
+}
+
+/* Styling the buttons (increase/decrease for adults, children, and infants) */
+button[type="button"] {
+    background-color: #3182ce; /* Tailwind blue-600 */
+    color: white;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #2b6cb0; /* Tailwind blue-700 */
+}
+
+button[type="submit"] {
+    background-color: #3182ce; /* Tailwind blue-600 */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2b6cb0; /* Tailwind blue-700 */
+}
+
+/* Flexbox for Layout */
+.grid-cols-1, .sm\:grid-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Adjusting the input sizes for more manageable widths */
+input[type="number"], select, input[type="email"], input[type="tel"] {
+    max-width: 400px; /* Limit max width */
+}
+
+/* Center the submit button */
+.flex.justify-center {
+    justify-content: center;
+}
+
+/* Form Section Styling */
+section {
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+/* Header Title */
+h1 {
+    font-size: 2rem;
+    color: #3182ce; /* Tailwind blue-600 */
+}
+
+/* Styling the label */
+label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568; /* Tailwind gray-700 */
+}
+
+/* Itinerary checkboxes styling */
+input[type="checkbox"] {
+    accent-color: #3182ce; /* Tailwind blue-600 */
+}
+
+/* Success Message Popup */
+#confirmation-message {
+    background-color: #f0fdf4; /* Tailwind green-50 */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #68d391; /* Tailwind green-400 */
+    color: #38a169; /* Tailwind green-600 */
+    font-size: 1.25rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .grid-cols-1, .sm\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .flex.justify-center {
+        flex-direction: column;
+    }
+}
+
+/* Additional Input Focus Styling */
+input:focus, select:focus {
+    border-color: #3182ce; /* Tailwind blue-600 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Tailwind focus ring */
+}
+
+input:disabled, select:disabled {
+    background-color: #e2e8f0; /* Tailwind gray-200 */
+    cursor: not-allowed;
+}
+
+/* Button for Submit */
+button[type="submit"]:disabled {
+    background-color: #e2e8f0; /* Tailwind gray-200 */
+    cursor: not-allowed;
+}

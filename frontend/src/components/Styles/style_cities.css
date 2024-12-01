@@ -1,0 +1,102 @@
+/* General styles for the city details page */
+body {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  #destination-content {
+    background-color: #f9fafb;
+  }
+  
+  .destination-header img {
+    margin-top: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 500px;
+  }
+  
+  .destination-info {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .destination-info h1 {
+    font-size: 2rem;
+  }
+  
+  .destination-info p {
+    font-size: 1.125rem;
+  }
+  
+  .itinerary-section h2 {
+    font-size: 2rem;
+  }
+  
+  .itinerary {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .itinerary ul {
+    margin-top: 1rem;
+  }
+  
+  .itinerary ul li {
+    font-size: 1.125rem;
+    color: #555;
+  }
+  
+  .booking {
+    display: flex;               /* Use Flexbox for centering */
+    flex-direction: column;      /* Align children vertically */
+    align-items: center;         /* Center horizontally */
+    justify-content: center;     /* Center vertically (if needed) */
+    background-color: #3b75ccac;
+    color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 10px 15px -3px rgb(0 0 0 / 0.1), 0px 4px 6px -4px rgb(0 0 0 / 0.1);
+           /* Optional: Set a max width */
+    margin-left: auto;           /* Horizontally center by auto margins */
+    margin-right: auto;          /* Horizontally center by auto margins */
+  }
+  
+  .booking h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+  }
+  .booking p {
+    font-size: 1.125rem ;/* 18px */;
+    line-height: 1.75rem ;
+    margin-bottom: 1.5rem;
+
+  }
+  
+  .booking button {
+    align-content: center;
+    background-color: #16a34a;
+    padding-top: 0.75rem; /* 12px */;
+    padding-bottom: 0.75rem; /* 12px */;
+    padding-left: 1.5rem; /* 24px */;
+    padding-right: 1.5rem;
+    font-size: 1.125rem; /* 18px */;
+    line-height: 1.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) /* #ffffff */;
+
+  }
+  
+  .booking button:hover {
+    background-color: #15803d;
+  }
+  
+  #destination-name {
+    font-weight: bold;
+  }
+  
