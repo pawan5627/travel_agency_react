@@ -3,7 +3,7 @@ const navbarHTML = `
 <!-- navbar.html -->
   <header class="sticky-navbar bg-gray-800 text-white py-4 px-8 shadow-lg">
     <div class="flex justify-between items-center">
-      <img src="assets/Logo.png" alt="Logo" class="w-auto h-20 cursor-pointer" id="logo"> <!-- Logo Image -->
+      <img src="../../assets/Logo.png" alt="Logo" class="w-auto h-20 cursor-pointer" id="logo"> <!-- Logo Image -->
   <!-- Search Icon (Mobile) -->
   <div class="search-bar">
     <input type="text" id="search-input" placeholder="Search destination..." class="focus:outline-none">
@@ -67,7 +67,7 @@ const footerHTML = `
 <footer class="secondary-footer">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center">
-        <img src="assets/Logo.png" alt="Logo" class="footer-logo">
+        <img src="../../assets/Logo.png" alt="Logo" class="footer-logo">
         <div class="footer-menu">
           <ul>
             <li><a href="index.html">Home</a></li>

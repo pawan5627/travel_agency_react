@@ -1,13 +1,16 @@
 // Footer.js
 import React from "react";
-
+import '../Styles/style.css';
+import '../Styles/style_cities.css';
+import '../Styles/style_destination.css';
+import '../Styles/style_form.css';
 const Footer = () => {
   return (
     <>
       <footer className="secondary-footer">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            <img src="assets/Logo.png" alt="Logo" className="footer-logo" />
+            <img src="/Logo.png" alt="Logo" className="footer-logo" />
             <div className="footer-menu">
               <ul>
                 <li><a href="index.html">Home</a></li>
@@ -27,6 +30,11 @@ const Footer = () => {
               <p>Contact Us: <strong>info@travelagency.com</strong></p>
               <p>Phone: +123 456 7890</p>
             </div>
+            <div className="newsletter">
+            <h3>Subscribe to our newsletter</h3>
+            <input type="email" placeholder="Your email" />
+            <button>Subscribe</button>
+          </div>
           </div>
         </div>
       </footer>

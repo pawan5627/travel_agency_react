@@ -1,6 +1,9 @@
 // Header.js
 import React, { useState } from "react";
-
+import '../Styles/style.css';
+import '../Styles/style_cities.css';
+import '../Styles/style_destination.css';
+import '../Styles/style_form.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -31,7 +34,7 @@ const Header = () => {
   return (
     <header className="sticky-navbar bg-gray-800 text-white py-4 px-8 shadow-lg">
       <div className="flex justify-between items-center">
-        <img src="assets/Logo.png" alt="Logo" className="w-auto h-20 cursor-pointer" id="logo" />
+        <img src="/Logo.png" alt="Logo" className="w-auto h-20 cursor-pointer" id="logo" />
         {/* Search Bar */}
         <div className="search-bar">
           <input type="text" id="search-input" placeholder="Search destination..." className="focus:outline-none" />
