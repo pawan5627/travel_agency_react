@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
-
+import Slider from "./components/Layouts/Slider";
 import './styling.css'; // Assuming you have a separate CSS file for specific styles
 import './components/Styles/style.css';
 import './components/Styles/style_cities.css';
@@ -12,6 +12,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <Slider />
       {/* Search Section */}
       <section className="search-section">
         <div className="search-container">
