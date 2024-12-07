@@ -1,4 +1,9 @@
 
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
     /* Custom Colors */
     :root {
       --primary-color: #4db8ff;
@@ -99,7 +104,7 @@
   overflow-y: auto;
   z-index: 50;
   color: #ffffff;
-  display: none; /* Hidden by default */
+  /* display: none; Hidden by default */
   margin-top: 8px; /* Space between search bar and dropdown */
 }
 
@@ -428,4 +433,13 @@ a:hover {
 /* Transition for the whole dropdown */
 #destination-dropdown {
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.search-results {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
 }
