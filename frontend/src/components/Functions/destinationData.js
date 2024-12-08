@@ -7,7 +7,7 @@ const destinations = [
         startDate: '2024-11-01',
         endDate: '2024-11-06',
         cost: 500,
-        image: './assets/lahore.jpg',
+        image: './lahore.jpg',
         description: "Explore the rich history and vibrant culture of Lahore...",
         link: "Cities.html?destination=Lahore",
         itineraries: [
@@ -22,7 +22,7 @@ const destinations = [
         startDate: '2024-11-15',
         endDate: '2024-11-21',
         cost: 450,
-        image: './assets/Islamabad.jpg',
+        image: './Islamabad.jpg',
         description: "Experience the modern charm of Islamabad...",
         link: "Cities.html?destination=Islamabad",
         itineraries: [
@@ -37,7 +37,7 @@ const destinations = [
         startDate: '2024-11-20',
         endDate: '2024-11-26',
         cost: 800,
-        image: './assets/Gilgit.jpg',
+        image: './Gilgit.jpg',
         description: "Embark on an adventure in the breathtaking landscapes of Gilgit-Baltistan...",
         link: "Cities.html?destination=Gilgit",    
         itineraries: [

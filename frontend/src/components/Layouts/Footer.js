@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="footer-menu">
               <ul>
               <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
-                <li><a href="Destination.html">Destination</a></li>
+                <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
                 <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
                 <li><a href="Contact-Us.html">Contact Us</a></li>
               </ul>
