@@ -6,6 +6,7 @@ import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
 import '../Styles/style_form.css';
 import useSearch from '../Functions/Search'; // Import the custom search hook
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,7 +64,7 @@ const Header = () => {
 
         {/* Desktop Navbar */}
         <ul className="flex space-x-4 hidden md:flex">
-          <li><a href="index.html" className="hover:text-gray-300">Home</a></li>
+        <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
           <li className="relative">
             <a href="Destination.html" className="hover:text-gray-300">Destination</a>
             <ul id="destination-dropdown">
@@ -74,7 +75,7 @@ const Header = () => {
               ))}
             </ul>
           </li>
-          <li><a href="AboutUs.html" className="hover:text-gray-300">About Us</a></li>
+          <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
           <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
         </ul>
 
@@ -103,9 +104,9 @@ const Header = () => {
       {isMenuOpen && (
         <div id="mobile-menu" className="md:hidden bg-gray-800 text-white p-4">
           <ul>
-            <li><a href="index.html" className="block py-2">Home</a></li>
+          <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><a href="Destination.html" className="block py-2">Destination</a></li>
-            <li><a href="AboutUs.html" className="block py-2">About Us</a></li>
+            <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
             <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
           </ul>
         </div>
