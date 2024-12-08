@@ -57,27 +57,28 @@ const Filter = ({ destinations, onFilter }) => {
       {/* Price Range Filter */}
       <div className="filter-group mb-8">
         <label htmlFor="price-range" class="block text-sm font-semibold">Price Range</label>
-        <input
-          type="range"
-          id="price-range"
-          value={priceRange}
-          min="0"
-          max="10000"
-          onChange={(e) => setPriceRange(e.target.value)}
-          className="range-filter"
-        />
-        <span id="current-price">${priceRange}</span>
+        <div class="relative">
+            <input type="range" id="price-range" min="0" value={priceRange} max="1000"  onChange={(e) => setPriceRange(e.target.value)} class="w-full mt-2" />
+            
+            <div class="flex justify-between text-sm mt-2">
+                <span id="min-price" class="text-white">$0</span>
+                <span id="current-price" class="text-blue-400 font-semibold">${priceRange}</span>
+                <span id="max-price" class="text-white">$1000</span>
+                
+            </div>
+      </div>
       </div>
 
       {/* Date Range Filter */}
-      <div className="filter-group">
+      <div className="filter-group mb-4">
         <label htmlFor="date-start">Start Date</label>
         <input
           type="date"
           id="date-start"
+
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
-          className="date-filter"
+          className="date-filter w-full p-3 mt-2 bg-gray-700 border border-gray-600 text-white rounded-lg mb-2"
         />
       </div>
       <div className="filter-group">
@@ -87,7 +88,7 @@ const Filter = ({ destinations, onFilter }) => {
           id="date-end"
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
-          className="date-filter"
+          className="date-filter w-full p-3 mt-2 bg-gray-700 border border-gray-600 text-white rounded-lg"
         />
       </div>
 
