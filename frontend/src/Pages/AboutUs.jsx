@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from "../components/Layouts/Slider";
+import HeroSection from "../components/Layouts/HeroSection";
 import '../components/Styles/style.css';
 import '../components/Styles/style_cities.css';
 import '../components/Styles/style_destination.css';
@@ -8,7 +8,10 @@ import '../components/Styles/style_form.css';
 function AboutUs() {
   return (
     <div className="bg-gray-50">
-        <Slider/>
+        <HeroSection 
+        imageUrl="/about-us.jpg"  // Pass the image URL
+        title="About Contour Travel Agency"  // Pass the title
+      />
       {/* About Us Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-16">
