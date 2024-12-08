@@ -1,16 +1,13 @@
 import React from 'react';
-import Header from "./components/Layouts/Header";
-import Footer from "./components/Layouts/Footer";
-import Slider from "./components/Layouts/Slider";
-import './components/Styles/style.css';
-import './components/Styles/style_cities.css';
-import './components/Styles/style_destination.css';
-import './components/Styles/style_form.css';
+import Slider from "../components/Layouts/Slider";
+import '../components/Styles/style.css';
+import '../components/Styles/style_cities.css';
+import '../components/Styles/style_destination.css';
+import '../components/Styles/style_form.css';
 
 function AboutUs() {
   return (
     <div className="bg-gray-50">
-        <Header/>
         <Slider/>
       {/* About Us Section */}
       <section className="container mx-auto px-4 py-16">
@@ -24,7 +21,7 @@ function AboutUs() {
           </div>
 
           <div className="flex justify-center items-center">
-            <img src="assets/group-photo.jpg" alt="About Contour Travel Agency" className="rounded-lg shadow-lg w-full md:w-3/4" />
+            <img src="/group-photo.jpg" alt="About Contour Travel Agency" className="rounded-lg shadow-lg w-full md:w-3/4" />
           </div>
         </div>
 
@@ -50,9 +47,6 @@ function AboutUs() {
           </div>
         </div>
       </section>
-
-      {/* Footer (Secondary Footer) */}
-      <Footer/>
     </div>
   );
 }

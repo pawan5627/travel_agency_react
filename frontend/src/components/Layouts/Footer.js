@@ -4,6 +4,7 @@ import '../Styles/style.css';
 import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
 import '../Styles/style_form.css';
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <>
@@ -13,9 +14,9 @@ const Footer = () => {
             <img src="/Logo.png" alt="Logo" className="footer-logo" />
             <div className="footer-menu">
               <ul>
-                <li><a href="index.html">Home</a></li>
+              <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
                 <li><a href="Destination.html">Destination</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
+                <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
                 <li><a href="Contact-Us.html">Contact Us</a></li>
               </ul>
             </div>

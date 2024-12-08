@@ -64,7 +64,7 @@ const Header = () => {
 
         {/* Desktop Navbar */}
         <ul className="flex space-x-4 hidden md:flex">
-          <li><a href="index.html" className="hover:text-gray-300">Home</a></li>
+        <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
           <li className="relative">
             <a href="Destination.html" className="hover:text-gray-300">Destination</a>
             <ul id="destination-dropdown">
@@ -104,9 +104,9 @@ const Header = () => {
       {isMenuOpen && (
         <div id="mobile-menu" className="md:hidden bg-gray-800 text-white p-4">
           <ul>
-            <li><a href="index.html" className="block py-2">Home</a></li>
+          <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><a href="Destination.html" className="block py-2">Destination</a></li>
-            <li><a href="AboutUs.html" className="block py-2">About Us</a></li>
+            <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
             <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
           </ul>
         </div>
