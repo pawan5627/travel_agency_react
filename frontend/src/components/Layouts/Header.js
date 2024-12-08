@@ -66,7 +66,7 @@ const Header = () => {
         <ul className="flex space-x-4 hidden md:flex">
         <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
           <li className="relative">
-            <a href="Destination.html" className="hover:text-gray-300">Destination</a>
+          <Link to="/destination" className="hover:text-gray-300">Destinations</Link>
             <ul id="destination-dropdown">
               {destinations.map(destination => (
                 <li key={destination.name}>
@@ -105,7 +105,7 @@ const Header = () => {
         <div id="mobile-menu" className="md:hidden bg-gray-800 text-white p-4">
           <ul>
           <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
-            <li><a href="Destination.html" className="block py-2">Destination</a></li>
+            <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
             <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
             <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
           </ul>

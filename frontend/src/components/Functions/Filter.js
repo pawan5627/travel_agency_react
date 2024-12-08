@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../Styles/style_destination.css';
 const Filter = ({ destinations, onFilter }) => {
   const [country, setCountry] = useState('all');
   const [priceRange, setPriceRange] = useState(0);
@@ -36,10 +36,11 @@ const Filter = ({ destinations, onFilter }) => {
   return (
     <div className="filter-container">
       {/* Country Filter */}
-      <div className="filter-group">
-        <label htmlFor="country">Country</label>
+      <div className="filter-group mb-4">
+        <label htmlFor="country" class="block text-sm font-semibold">Country</label>
         <select
           id="country"
+          class="w-full p-3 mt-2 bg-gray-700 border border-gray-600 text-white rounded-lg"
           value={country}
           onChange={(e) => setCountry(e.target.value)}
           className="select-filter"
@@ -48,13 +49,14 @@ const Filter = ({ destinations, onFilter }) => {
           {/* Add options for countries dynamically or statically */}
           <option value="USA">USA</option>
           <option value="France">France</option>
+          <option value="Pakistan">Pakistan</option>
           {/* Add other countries */}
         </select>
       </div>
 
       {/* Price Range Filter */}
-      <div className="filter-group">
-        <label htmlFor="price-range">Price Range</label>
+      <div className="filter-group mb-8">
+        <label htmlFor="price-range" class="block text-sm font-semibold">Price Range</label>
         <input
           type="range"
           id="price-range"
