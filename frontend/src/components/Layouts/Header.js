@@ -6,6 +6,7 @@ import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
 import '../Styles/style_form.css';
 import useSearch from '../Functions/Search'; // Import the custom search hook
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,7 +75,7 @@ const Header = () => {
               ))}
             </ul>
           </li>
-          <li><a href="AboutUs.html" className="hover:text-gray-300">About Us</a></li>
+          <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
           <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
         </ul>
 

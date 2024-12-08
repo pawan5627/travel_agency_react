@@ -7,11 +7,18 @@ import './components/Styles/style.css';
 import './components/Styles/style_cities.css';
 import './components/Styles/style_destination.css';
 import './components/Styles/style_form.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from "./AboutUs";
 
 const App = () => {
   return (
     <div>
+      <Router>
       <Header />
+      <Routes>
+        <Route path="/aboutus" element={<AboutUs />} />
+      </Routes>
+    </Router>
       <Slider />
       {/* Search Section */}
       <section className="search-section">
