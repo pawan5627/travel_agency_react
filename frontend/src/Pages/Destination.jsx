@@ -14,6 +14,8 @@ function App () {
   const handleFilter = (filteredData) => {
     setFilteredDestinations(filteredData);
   };
+
+  
     return (
     <div>
       <Slider />
