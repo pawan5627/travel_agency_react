@@ -11,7 +11,7 @@ const Footer = () => {
       <footer className="secondary-footer">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            <img src="/Logo.png" alt="Logo" className="footer-logo" />
+            <img src="/site images/Logo.png" alt="Logo" className="footer-logo" />
             <div className="footer-menu">
               <ul>
               <li><Link to="/" className="hover:text-gray-300">Home</Link></li>

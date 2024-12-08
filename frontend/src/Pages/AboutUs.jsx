@@ -9,7 +9,7 @@ function AboutUs() {
   return (
     <div className="bg-gray-50">
         <HeroSection 
-        imageUrl="/about-us.jpg"  // Pass the image URL
+        imageUrl="/site images/about-us.jpg"  // Pass the image URL
         title="About Contour Travel Agency"  // Pass the title
       />
       {/* About Us Section */}
@@ -24,7 +24,7 @@ function AboutUs() {
           </div>
 
           <div className="flex justify-center items-center">
-            <img src="/group-photo.jpg" alt="About Contour Travel Agency" className="rounded-lg shadow-lg w-full md:w-3/4" />
+            <img src="/site images/group-photo.jpg" alt="About Contour Travel Agency" className="rounded-lg shadow-lg w-full md:w-3/4" />
           </div>
         </div>
 

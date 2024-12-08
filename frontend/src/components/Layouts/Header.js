@@ -41,7 +41,7 @@ const Header = () => {
   return (
     <header className="sticky-navbar bg-gray-800 text-white py-4 px-8 shadow-lg">
       <div className="flex justify-between items-center">
-        <img src="/Logo.png" alt="Logo" className="w-auto h-20 cursor-pointer" id="logo" />
+        <img src="/site images/Logo.png" alt="Logo" className="w-auto h-20 cursor-pointer" id="logo" />
         {/* Search Bar */}
         <div className="search-bar">
           <input

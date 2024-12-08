@@ -4,9 +4,9 @@ import '../Styles/style.css';// Assuming the styles are in Slider.css
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    { src: '/Slider1.jpg', alt: 'Banner 1' },
-    { src: '/Slider2.jpg', alt: 'Banner 2' },
-    { src: '/Slider3.jpg', alt: 'Banner 3' }
+    { src: '/site images/Slider1.jpg', alt: 'Banner 1' },
+    { src: '/site images/Slider2.jpg', alt: 'Banner 2' },
+    { src: '/site images/Slider3.jpg', alt: 'Banner 3' }
   ];
 
   const totalSlides = slides.length;
