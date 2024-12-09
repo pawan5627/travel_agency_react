@@ -5,6 +5,7 @@ import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
 import '../Styles/style_form.css';
 import { Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 const Footer = () => {
   return (
     <>
@@ -43,13 +44,13 @@ const Footer = () => {
       <footer className="footer text-center text-white py-6">
         <p>&copy; Contour Travel Agency 2024</p>
         <p>Follow Us:
-          <a href="#" className="hover:text-blue-400 text-xl">
+          <a href="#" className="hover:text-blue-400 text-xl p-2">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="#" className="hover:text-blue-400 text-xl">
+          <a href="#" className="hover:text-blue-400 text-xl p-2">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="#" className="hover:text-blue-400 text-xl">
+          <a href="#" className="hover:text-blue-400 text-xl p-2">
             <i className="fab fa-twitter"></i>
           </a>
         </p>
