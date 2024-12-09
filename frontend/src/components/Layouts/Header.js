@@ -102,13 +102,13 @@ const Header = ({ user, handleLogout }) => {
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-40">
                   <ul>
-                    <li><Link to="/profile" className="block py-2">Profile</Link></li>
-                    <li><Link to="/bookings" className="block py-2">Bookings</Link></li>
+                    <li><Link to="/profile" className="block py-2 text-center">Profile</Link></li>
+                    <li><Link to="/bookings" className="block py-2 text-center">Bookings</Link></li>
                     {user.type === "admin" && (
-                      <li><Link to="/admin-panel" className="block py-2">Admin Panel</Link></li>
+                      <li><Link to="/admin-panel" className="block py-2 text-center">Admin Panel</Link></li>
                     )}
                     <li>
-                      <button onClick={handleLogout} className="block py-2 w-full text-left">Logout</button>
+                      <button onClick={handleLogout} className="logout rounded block p-2 w-full text-center">Logout</button>
                     </li>
                   </ul>
                 </div>

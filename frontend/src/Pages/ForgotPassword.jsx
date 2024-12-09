@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PasswordStrengthBar from 'react-password-strength-bar'; // Password strength library
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '../components/Styles/style_login.css';
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -8,6 +10,10 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordValid, setPasswordValid] = useState(false);
   const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState(false);
+
+  // States for password visibility toggle
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -41,6 +47,30 @@ const ForgotPassword = () => {
     setPasswordValid(passwordRegex.test(password));
   };
 
+  // Validate if all conditions are met for enabling the submit button
+  const isFormValid = () => {
+    // Check if email is valid
+    const isEmailValid = email && /\S+@\S+\.\S+/.test(email);
+    // Check if password is valid, confirm password matches, and email is valid
+    return (
+      isEmailValid &&
+      passwordValid &&
+      confirmPassword === password &&
+      password.trim() !== "" &&
+      confirmPassword.trim() !== ""
+    );
+  };
+
+  // Toggle password visibility
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  // Toggle confirm password visibility
+  const toggleConfirmPasswordVisibility = () => {
+    setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
+  };
+
   return (
     <div className="forgot-password-page">
       <div className="form-container">
@@ -59,28 +89,52 @@ const ForgotPassword = () => {
           
           <div className="input-group">
             <label>New Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              placeholder="Enter new password"
-              required
-            />
+            <div className="password-input-container">
+              <input
+                type={isPasswordVisible ? "text" : "password"} // Toggle password visibility
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="Enter new password"
+                required
+              />
+              <FontAwesomeIcon
+                icon={isPasswordVisible ? faEyeSlash : faEye} // Toggle eye icon based on visibility state
+                className="eye-icon"
+                onClick={togglePasswordVisibility} // Toggle visibility on click
+              />
+            </div>
             <PasswordStrengthBar password={password} />
+            <div>{/* Password Requirements Text */}
+             <p> Password should meet the below requirements:</p>
+              <ul>
+                <li>It should contain at least 6 Letters</li>
+                <li>It should contain at least one Uppercase letter</li>
+                <li>It should contain at least one Lowercase letter</li>
+                <li>It should contain at least one Symbol (e.g., @, #, $, etc.)</li>
+              </ul>
+            </div>
+            
           </div>
 
           <div className="input-group">
             <label>Confirm Password</label>
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Confirm new password"
-              required
-            />
+            <div className="password-input-container">
+              <input
+                type={isConfirmPasswordVisible ? "text" : "password"} // Toggle confirm password visibility
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                placeholder="Confirm new password"
+                required
+              />
+              <FontAwesomeIcon
+                icon={isConfirmPasswordVisible ? faEyeSlash : faEye} // Toggle eye icon based on visibility state
+                className="eye-icon"
+                onClick={toggleConfirmPasswordVisibility} // Toggle visibility on click
+              />
+            </div>
           </div>
 
-          <button type="submit" disabled={!passwordValid}>
+          <button type="submit" disabled={!isFormValid()}>
             Change Password
           </button>
         </form>
