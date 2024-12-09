@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import destinations from '../Functions/destinationData'; // Import the destinations data
 import useSearch from '../Functions/Search'; // Import the custom search hook
 import '../Styles/style.css';
-import '../Styles/style_cities.css';
-import '../Styles/style_destination.css';
-import '../Styles/style_form.css';
-
-const Header = () => {
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+const Header = ({ user, handleLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");  // State for the search input
-  const [user, setUser] = useState(null); // State to track if a user is logged in
+   // State to track if a user is logged in
   const { searchResults, isDropdownVisible, handleSearchInput } = useSearch(destinations);
 
   // Handle scroll for sticky navbar
@@ -29,20 +28,11 @@ const Header = () => {
   };
 
   // Handle logout
-  const handleLogout = () => {
-    setUser(null); // Clear user data on logout
-  };
+
 
   // Simulate fetching user data from an API
   useEffect(() => {
     // Simulating user data for logged-in customer or admin
-    const mockUser = {
-      name: "John Doe",
-      avatar: "/path/to/avatar.jpg",
-      type: "customer", // or "admin"
-    };
-    setUser(mockUser);
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -72,9 +62,7 @@ const Header = () => {
             className="focus:outline-none"
           />
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 16h6M10 12h6M10 8h6M3 20h18"></path>
-            </svg>
+              <FontAwesomeIcon icon={faSearch} className="w-5 h-5" />
           </button>
         </div>
 
@@ -92,13 +80,13 @@ const Header = () => {
             </ul>
           </li>
           <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-          <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
-        </ul>
-
-        {/* User Avatar and Login Button */}
-        <div className="flex items-center space-x-4">
+          <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
+          <li><div className="flex items-center space-x-4">
           {!user ? (
-            <Link to="/login" className="text-white">Login</Link>
+            <Link to="/login" className="text-white flex items-center space-x-0.5">
+            <i className="fas fa-sign-in-alt w-5 h-5 pt-0.5"></i> {/* FontAwesome Login Icon */}
+            <span>Login</span>
+          </Link>
           ) : (
             <div className="relative">
               <img
@@ -110,20 +98,21 @@ const Header = () => {
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 bg-gray-800 text-white p-4 rounded-lg shadow-lg w-40">
                   <ul>
-                    <li><Link to="/profile" className="block py-2">Profile</Link></li>
-                    <li><Link to="/bookings" className="block py-2">Bookings</Link></li>
+                    <li><Link to="/profile" className="block py-2 text-center">Profile</Link></li>
+                    <li><Link to="/bookings" className="block py-2 text-center">Bookings</Link></li>
                     {user.type === "admin" && (
-                      <li><Link to="/admin-panel" className="block py-2">Admin Panel</Link></li>
+                      <li><Link to="/admin-panel" className="block py-2 text-center">Admin Panel</Link></li>
                     )}
                     <li>
-                      <button onClick={handleLogout} className="block py-2 w-full text-left">Logout</button>
+                      <button onClick={handleLogout} className="logout rounded block p-2 w-full text-center">Logout</button>
                     </li>
                   </ul>
                 </div>
               )}
             </div>
           )}
-        </div>
+        </div></li>
+        </ul>
 
         {/* Mobile Menu Button */}
         <button id="menu-button" className="md:hidden text-2xl focus:outline-none" onClick={toggleMenu}>
@@ -153,7 +142,7 @@ const Header = () => {
             <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
             <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-            <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
+            <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
           </ul>
         </div>
       )}

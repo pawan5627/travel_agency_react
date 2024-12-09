@@ -87,6 +87,7 @@
 /* Search Bar Focus Effect */
 .search-bar:hover {
   background-color: rgba(255, 255, 255, 0.5);
+  
 }
 
 /* Search Results Dropdown */
@@ -442,4 +443,22 @@ a:hover {
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 100%;
+}
+
+
+.newsletter button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.newsletter button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

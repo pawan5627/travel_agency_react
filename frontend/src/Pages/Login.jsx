@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { validateLogin } from "../components/Functions/loginValidator"; // Import the login validation logic
 import '../components/Styles/style_login.css'; // Add your form styling
+import { Link } from "react-router-dom";
 //import { useHistory } from "react-router-dom";
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState("");
@@ -58,7 +59,7 @@ const Login = ({ onLogin }) => {
         <button type="submit">Login</button>
       </form>
       <div className="links">
-        <a href="/forgot-password">Forgot Password?</a>
+        <Link to="/forgot-password">Forgot Password?</Link>
         <p>Don't have an account? <a href="/signup">Sign Up</a></p>
       </div>
     </div>
