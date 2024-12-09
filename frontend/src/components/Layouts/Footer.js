@@ -1,9 +1,7 @@
 // Footer.js
 import React from "react";
 import '../Styles/style.css';
-import '../Styles/style_cities.css';
-import '../Styles/style_destination.css';
-import '../Styles/style_form.css';
+
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
@@ -17,7 +15,7 @@ const Footer = () => {
               <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
                 <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
                 <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-                <li><a href="Contact-Us.html">Contact Us</a></li>
+                <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
               </ul>
             </div>
             <div className="footer-menu">

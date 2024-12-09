@@ -4,7 +4,6 @@ import destinations from '../Functions/destinationData'; // Import the destinati
 import '../Styles/style.css';
 import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
-import '../Styles/style_form.css';
 import useSearch from '../Functions/Search'; // Import the custom search hook
 import { Link } from 'react-router-dom';
 
@@ -76,7 +75,7 @@ const Header = () => {
             </ul>
           </li>
           <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-          <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
+          <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -107,7 +106,7 @@ const Header = () => {
           <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
             <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-            <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
+            <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
           </ul>
         </div>
       )}
