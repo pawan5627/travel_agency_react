@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Layouts/Header";
 import Footer from "./components/Layouts/Footer";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ContactUs from "./Pages/ContactUs";
 import AboutUs from "./Pages/AboutUs";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";

@@ -60,7 +60,7 @@ const Filter = ({ destinations, onFilter }) => {
     <div className="filter-container">
       {/* Country Filter */}
       <div className="filter-group mb-4">
-        <label htmlFor="country" class="block text-sm font-semibold">Country</label>
+        <label htmlFor="country" className="block text-sm font-semibold">Country</label>
         <select
           id="country"
           name="country"
@@ -79,14 +79,14 @@ const Filter = ({ destinations, onFilter }) => {
 
       {/* Price Range Filter */}
       <div className="filter-group mb-8">
-        <label htmlFor="price-range" class="block text-sm font-semibold">Price Range</label>
-        <div class="relative">
-            <input type="range" id="price-range"  name="priceRange" min="0" value={filters.priceRange} max="1000"  onChange={handleFilterChange} class="w-full mt-2" />
+        <label htmlFor="price-range" className="block text-sm font-semibold">Price Range</label>
+        <div className="relative">
+            <input type="range" id="price-range"  name="priceRange" min="0" value={filters.priceRange} max="1000"  onChange={handleFilterChange} className="w-full mt-2" />
             
-            <div class="flex justify-between text-sm mt-2">
-                <span id="min-price" class="text-white">$0</span>
-                <span id="current-price" class="text-blue-400 font-semibold">${filters.priceRange}</span>
-                <span id="max-price" class="text-white">$1000</span>
+            <div className="flex justify-between text-sm mt-2">
+                <span id="min-price" className="text-white">$0</span>
+                <span id="current-price" className="text-blue-400 font-semibold">${filters.priceRange}</span>
+                <span id="max-price" className="text-white">$1000</span>
                 
             </div>
       </div>

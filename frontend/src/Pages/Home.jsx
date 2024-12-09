@@ -1,9 +1,7 @@
 import React from "react";
 import Slider from "../components/Layouts/Slider";// Assuming you have a separate CSS file for specific styles
 import '../components/Styles/style.css';
-import '../components/Styles/style_cities.css';
-import '../components/Styles/style_destination.css';
-import '../components/Styles/style_form.css';
+
 
 
 const Home = () => {

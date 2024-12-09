@@ -1,9 +1,7 @@
 import React from 'react';
 import HeroSection from "../components/Layouts/HeroSection";
 import '../components/Styles/style.css';
-import '../components/Styles/style_cities.css';
-import '../components/Styles/style_destination.css';
-import '../components/Styles/style_form.css';
+
 
 function AboutUs() {
   return (

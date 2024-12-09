@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Slider from "../components/Layouts/Slider";
 import '../components/Styles/style.css';
 import '../components/Styles/style_destination.css';
-import '../components/Styles/style_form.css';
 import Filter from "../components/Functions/Filter";
 import destinations from '../components/Functions/destinationData';
 import DestinationsList from "../components/Functions/DestinationList";

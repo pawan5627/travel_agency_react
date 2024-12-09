@@ -84,7 +84,7 @@ const Header = ({ user, handleLogout }) => {
             </ul>
           </li>
           <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-          <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
+          <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
           <li><div className="flex items-center space-x-4">
           {!user ? (
             <Link to="/login" className="text-white flex items-center space-x-0.5">
@@ -146,7 +146,7 @@ const Header = ({ user, handleLogout }) => {
             <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
             <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-            <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
+            <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
           </ul>
         </div>
       )}
