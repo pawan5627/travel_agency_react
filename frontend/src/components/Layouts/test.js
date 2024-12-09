@@ -6,12 +6,11 @@ import '../Styles/style.css';
 import '../Styles/style_cities.css';
 import '../Styles/style_destination.css';
 import '../Styles/style_form.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const Header = ({ user, handleLogout }) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");  // State for the search input
-   // State to track if a user is logged in
+  const [user, setUser] = useState(null); // State to track if a user is logged in
   const { searchResults, isDropdownVisible, handleSearchInput } = useSearch(destinations);
 
   // Handle scroll for sticky navbar
@@ -30,11 +29,20 @@ const Header = ({ user, handleLogout }) => {
   };
 
   // Handle logout
-
+  const handleLogout = () => {
+    setUser(null); // Clear user data on logout
+  };
 
   // Simulate fetching user data from an API
   useEffect(() => {
     // Simulating user data for logged-in customer or admin
+    const mockUser = {
+      name: "John Doe",
+      avatar: "/path/to/avatar.jpg",
+      type: "customer", // or "admin"
+    };
+    setUser(mockUser);
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -84,13 +92,13 @@ const Header = ({ user, handleLogout }) => {
             </ul>
           </li>
           <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-          <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
-          <li><div className="flex items-center space-x-4">
+          <li><a href="Contact-Us.html" className="hover:text-gray-300">Contact Us</a></li>
+        </ul>
+
+        {/* User Avatar and Login Button */}
+        <div className="flex items-center space-x-4">
           {!user ? (
-            <Link to="/login" className="text-white flex items-center space-x-0.5">
-            <i className="fas fa-sign-in-alt w-5 h-5 pt-0.5"></i> {/* FontAwesome Login Icon */}
-            <span>Login</span>
-          </Link>
+            <Link to="/login" className="text-white">Login</Link>
           ) : (
             <div className="relative">
               <img
@@ -115,8 +123,7 @@ const Header = ({ user, handleLogout }) => {
               )}
             </div>
           )}
-        </div></li>
-        </ul>
+        </div>
 
         {/* Mobile Menu Button */}
         <button id="menu-button" className="md:hidden text-2xl focus:outline-none" onClick={toggleMenu}>
@@ -146,7 +153,7 @@ const Header = ({ user, handleLogout }) => {
             <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
             <li><Link to="/destination" className="hover:text-gray-300">Destinations</Link></li>
             <li><Link to="/aboutus" className="hover:text-gray-300">About Us</Link></li>
-            <li><Link to="/contactus" className="hover:text-gray-300">Contact Us</Link></li>
+            <li><a href="Contact-Us.html" className="block py-2">Contact Us</a></li>
           </ul>
         </div>
       )}
