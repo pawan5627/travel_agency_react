@@ -7,6 +7,7 @@ import AboutUs from "./Pages/AboutUs";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Destination from "./Pages/Destination";
+import ForgotPassword from "./Pages/ForgotPassword";
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
       <Route path="/destination" element={<Destination />} />
       <Route path="/aboutus" element={<AboutUs />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Forgot Password Route */}
       </Routes>
       <Footer />
     </Router>
