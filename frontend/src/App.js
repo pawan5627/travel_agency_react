@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Destination from "./Pages/Destination";
 import ForgotPassword from "./Pages/ForgotPassword";
+import SignUp from "./Pages/SignUp";
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -41,6 +42,7 @@ const App = () => {
       <Route path="/destination" element={<Destination />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/contactus" element={<ContactUs />} />
+      <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Forgot Password Route */}
       </Routes>
       <Footer />

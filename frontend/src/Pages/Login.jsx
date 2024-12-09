@@ -60,7 +60,7 @@ const Login = ({ onLogin }) => {
       </form>
       <div className="links">
         <Link to="/forgot-password">Forgot Password?</Link>
-        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+        <p>Don't have an account? <Link to="/sign-up">Sign Up</Link></p>
       </div>
     </div>
     </div>
