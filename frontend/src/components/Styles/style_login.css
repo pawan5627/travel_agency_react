@@ -56,12 +56,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  margin-top: 15vh;
   background-color: #f4f4f4;
 }
 
 .form-container {
   background-color: white;
+
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -92,7 +93,7 @@ h2 {
   border-radius: 4px;
 }
 
-/* button {
+.highlight-button {
   width: 100%;
   padding: 10px;
   background-color: #4CAF50;
@@ -104,10 +105,10 @@ h2 {
   margin-top: 20px;
 }
 
-button:disabled {
+.highlight-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-} */
+}
 
 /* Password Strength Bar */
 .PasswordStrengthBar {
@@ -147,22 +148,8 @@ button:disabled {
 
 /* ForgotPassword.css */
 
-.forgot-password-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
-}
 
-.form-container {
-  background-color: white;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
+
 
 h2 {
   text-align: center;

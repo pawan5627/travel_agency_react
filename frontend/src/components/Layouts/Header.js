@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import destinations from '../Functions/destinationData'; // Import the destinations data
 import useSearch from '../Functions/Search'; // Import the custom search hook
 import '../Styles/style.css';
-import '../Styles/style_cities.css';
-import '../Styles/style_destination.css';
-import '../Styles/style_form.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const Header = ({ user, handleLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");  // State for the search input
@@ -64,9 +62,7 @@ const Header = ({ user, handleLogout }) => {
             className="focus:outline-none"
           />
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 16h6M10 12h6M10 8h6M3 20h18"></path>
-            </svg>
+              <FontAwesomeIcon icon={faSearch} className="w-5 h-5" />
           </button>
         </div>
 
@@ -108,7 +104,7 @@ const Header = ({ user, handleLogout }) => {
                       <li><Link to="/admin-panel" className="block py-2 text-center">Admin Panel</Link></li>
                     )}
                     <li>
-                      <button onClick={handleLogout} className="logout rounded block p-2 w-full text-center">Logout</button>
+                      <button onClick={handleLogout} className="highlight-button">Logout</button>
                     </li>
                   </ul>
                 </div>

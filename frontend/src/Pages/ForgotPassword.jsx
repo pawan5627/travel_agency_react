@@ -104,7 +104,7 @@ const ForgotPassword = () => {
               />
             </div>
             <PasswordStrengthBar password={password} />
-            <div>{/* Password Requirements Text */}
+            <div className="password-requirements">{/* Password Requirements Text */}
              <p> Password should meet the below requirements:</p>
               <ul>
                 <li>It should contain at least 6 Letters</li>
@@ -134,7 +134,7 @@ const ForgotPassword = () => {
             </div>
           </div>
 
-          <button type="submit" disabled={!isFormValid()}>
+          <button className="highlight-button" type="submit" disabled={!isFormValid()}>
             Change Password
           </button>
         </form>
