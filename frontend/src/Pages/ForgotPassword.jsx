@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PasswordStrengthBar from 'react-password-strength-bar'; // Password strength library
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import '../components/Styles/style_login.css';
+import PasswordField from "../components/Layouts/PasswordField";
+import ConfirmPasswordField from "../components/Layouts/ConfirmPasswordField";
+import SuccessPopup from "../components/Layouts/SuccessPopup";
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
       <div className="form-container">
         <h2>Forgot Password</h2>
         <form onSubmit={handleSubmit}>
-          <div className="input-group">
+          <div className="input-group-login">
             <label>Email</label>
             <input
               type="email"
@@ -86,53 +86,20 @@ const ForgotPassword = () => {
               required
             />
           </div>
-          
-          <div className="input-group">
-            <label>New Password</label>
-            <div className="password-input-container">
-              <input
-                type={isPasswordVisible ? "text" : "password"} // Toggle password visibility
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder="Enter new password"
-                required
-              />
-              <FontAwesomeIcon
-                icon={isPasswordVisible ? faEyeSlash : faEye} // Toggle eye icon based on visibility state
-                className="eye-icon"
-                onClick={togglePasswordVisibility} // Toggle visibility on click
-              />
-            </div>
-            <PasswordStrengthBar password={password} />
-            <div className="password-requirements">{/* Password Requirements Text */}
-             <p> Password should meet the below requirements:</p>
-              <ul>
-                <li>It should contain at least 6 Letters</li>
-                <li>It should contain at least one Uppercase letter</li>
-                <li>It should contain at least one Lowercase letter</li>
-                <li>It should contain at least one Symbol (e.g., @, #, $, etc.)</li>
-              </ul>
-            </div>
-            
-          </div>
+         
+          <PasswordField 
+            password={password} 
+            onPasswordChange={handlePasswordChange} 
+            isPasswordVisible={isPasswordVisible} 
+            togglePasswordVisibility={togglePasswordVisibility}
+          />
 
-          <div className="input-group">
-            <label>Confirm Password</label>
-            <div className="password-input-container">
-              <input
-                type={isConfirmPasswordVisible ? "text" : "password"} // Toggle confirm password visibility
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm new password"
-                required
-              />
-              <FontAwesomeIcon
-                icon={isConfirmPasswordVisible ? faEyeSlash : faEye} // Toggle eye icon based on visibility state
-                className="eye-icon"
-                onClick={toggleConfirmPasswordVisibility} // Toggle visibility on click
-              />
-            </div>
-          </div>
+<ConfirmPasswordField 
+            confirmPassword={confirmPassword} 
+            onConfirmPasswordChange={(e) => setConfirmPassword(e.target.value)} 
+            isConfirmPasswordVisible={isConfirmPasswordVisible} 
+            toggleConfirmPasswordVisibility={toggleConfirmPasswordVisibility}
+          />
 
           <button className="highlight-button" type="submit" disabled={!isFormValid()}>
             Change Password
@@ -141,14 +108,7 @@ const ForgotPassword = () => {
       </div>
 
       {/* Success Popup */}
-      {isSuccessPopupVisible && (
-        <div className="popup-overlay">
-          <div className="popup">
-            <span className="popup-icon">&#10004;</span>
-            <p>Password changed successfully!</p>
-          </div>
-        </div>
-      )}
+      <SuccessPopup isVisible={isSuccessPopupVisible} message={"Password was changed successfully"} />
     </div>
   );
 };
