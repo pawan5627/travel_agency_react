@@ -43,7 +43,7 @@ const Header = ({ user, handleLogout }) => {
     <header className="sticky-navbar bg-gray-800 text-white py-4 px-8 shadow-lg">
       <div className="flex justify-between items-center">
         <img
-          src="/site images/Logo.png"
+          src="/logo/png/logo-no-background.png"
           alt="Logo"
           className="w-auto h-20 cursor-pointer"
           id="logo"

@@ -342,7 +342,7 @@ button:hover:enabled {
 }
 
 /* Button Styles */
-button {
+.signup-button2 {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
@@ -351,12 +351,12 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:disabled {
+.signup-button2:disabled {
   background-color: #ddd;
   cursor: not-allowed;
 }
 
-button:hover:enabled {
+.signup-button2:hover:enabled {
   background-color: #45a049;
 }
 
@@ -445,7 +445,7 @@ button:hover:enabled {
     height: 90px;
   }
 
-  button {
+  .signup-button2 {
     width: 100%;
   }
 
@@ -508,7 +508,7 @@ button:hover:enabled {
   margin-top: 20px;
 }
 
-button {
+.signup-button2 {
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 16px;
@@ -531,11 +531,11 @@ button {
   border: 1px solid #ccc;
 }
 
-button:hover {
+.signup-button2:hover {
   opacity: 0.8;
 }
 
-button:disabled {
+.signup-button2:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
