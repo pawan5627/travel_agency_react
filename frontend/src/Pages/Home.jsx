@@ -1,59 +1,52 @@
 import React from "react";
-import Slider from "../components/Layouts/Slider";// Assuming you have a separate CSS file for specific styles
+import Slider from "../components/Layouts/Slider"; // Assuming you have a separate CSS file for specific styles
 import '../components/Styles/style.css';
-
-
-
+import destinations from '../components/Functions/destinationData';
+import DestinationsList from "../components/Functions/DestinationList";
 const Home = () => {
+  
+  
   return (
     <div>
       <Slider />
-      {/* Search Section */}
-      <section className="search-section">
-        <div className="search-container">
-          <input type="text" placeholder="Location" className="search-input" />
-          <input type="date" placeholder="Check-in" className="search-input" />
-          <input type="date" placeholder="Check-out" className="search-input" />
-          <input type="number" placeholder="Guests" className="search-input" />
-          <button className="search-button">Search</button>
-        </div>
-      </section>
+     
 
-      {/* Destination Highlights */}
-      <section className="highlights">
-        <h2>A Signature of Excellence</h2>
+      {/* Most Popular Destinations Section */}
+      <section className="popular-destinations">
+        <h2>Most Popular Destinations</h2>
         <div className="highlight-cards">
-          <div className="card">
-            <img src="/site images/new york.jpg" alt="New York" className="card-image" />
-            <h3>New York</h3>
-            <p>Experience the charm of the city of love.</p>
+        <DestinationsList destinations={destinations} />
+        </div>
+      </section>
+
+      {/* Customer Testimonials Section */}
+      <section className="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div className="testimonial-cards">
+          <div className="testimonial-card">
+            <p className="testimonial-text">"Our trip to New York was amazing! The team at Contour Travel helped us plan the perfect itinerary, and everything went smoothly."</p>
+            <p className="testimonial-author">- Sarah J.</p>
           </div>
-          <div className="card">
-            <img src="/site images/maldives.jpg"alt="Maldives" className="card-image" />
-            <h3>Maldives</h3>
-            <p>Relax in paradise with clear waters and white sands.</p>
+          <div className="testimonial-card">
+            <p className="testimonial-text">"The Maldives was a dream! The best vacation I've ever had, thanks to the fantastic recommendations from the team."</p>
+            <p className="testimonial-author">- Mark D.</p>
           </div>
-          <div className="card">
-            <img src="/site images/norway.jpg"alt="Norway" className="card-image" />
-            <h3>Norway</h3>
-            <p>Venture into the Arctic wilds for an off-the-beaten-path journey.</p>
-          </div>
-          <div className="card">
-            <img src="/site images/greece.jpg" alt="Greece" className="card-image" />
-            <h3>Greece</h3>
-            <p>Santorini is the supermodel of the Greek islands.</p>
+          <div className="testimonial-card">
+            <p className="testimonial-text">"Norway’s northern lights tour was unforgettable! I would highly recommend this agency to anyone looking for an adventure."</p>
+            <p className="testimonial-author">- Emily T.</p>
           </div>
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="categories">
-        <h2>Find New Possibilities</h2>
-        <div className="category-cards">
-          <div className="category-card">Adventure</div>
-          <div className="category-card">Unique Destinations</div>
-          <div className="category-card">Entire Home</div>
-          <div className="category-card">Pet Allowed</div>
+      {/* Travel Gallery Section */}
+      <section className="travel-gallery">
+        <h2>Travel Gallery</h2>
+        <div className="gallery-images">
+          <img src="/site images/national park.jpg" alt="New York" className="gallery-image" />
+          <img src="/site images/resort.jpg" alt="Maldives" className="gallery-image" />
+          <img src="/site images/historic city.jpg" alt="Norway" className="gallery-image" />
+          <img src="/site images/greece.jpg" alt="Greece" className="gallery-image" />
+          <img src="/site images/hiking.jpg" alt="Hiking" className="gallery-image" />
         </div>
       </section>
     </div>

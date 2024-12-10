@@ -27,7 +27,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="footer-contact">
-              <p>Contact Us: <strong>info@travelagency.com</strong></p>
+              <p>Contact Us: <strong>info@travello.com</strong></p>
               <p>Phone: +123 456 7890</p>
             </div>
             <div className="newsletter">
@@ -40,7 +40,7 @@ const Footer = () => {
       </footer>
 
       <footer className="footer text-center text-white py-6">
-        <p>&copy; Contour Travel Agency 2024</p>
+        <p>&copy; Travello 2024</p>
         <p>Follow Us:
           <a href="#" className="hover:text-blue-400 text-xl p-2">
             <i className="fab fa-facebook-f"></i>

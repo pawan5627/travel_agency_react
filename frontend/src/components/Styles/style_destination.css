@@ -127,4 +127,87 @@
   
  
   
-  
+  /* DestinationDetails Styles */
+
+/* General layout */
+.destination-details {
+  background-color: #f8f9fa; /* Light background */
+  font-family: 'Arial', sans-serif;
+  padding: 2rem;
+  margin-top: 10%;
+}
+
+.destination-details h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1e40af; /* Blue accent */
+}
+
+.destination-details p {
+  font-size: 1.1rem;
+  color: #4b5563; /* Dark gray */
+  line-height: 1.6;
+}
+
+.destination-details .text-xl {
+  font-size: 1.25rem;
+}
+
+/* Image Styling */
+.destination-details img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Itinerary Section */
+.itinerary {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.itinerary:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.itinerary h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af; /* Blue accent */
+}
+
+.itinerary ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.itinerary li {
+  font-size: 1rem;
+  color: #6b7280; /* Medium gray */
+  margin-bottom: 1rem;
+}
+
+.itinerary span {
+  color: #9ca3af; /* Lighter gray */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .destination-details {
+    padding: 1.5rem;
+    margin-top: 20%;
+  }
+
+  .destination-details h1 {
+    font-size: 2.5rem;
+  }
+
+  .itinerary-list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -9,6 +9,8 @@ import Login from "./Pages/Login";
 import Destination from "./Pages/Destination";
 import ForgotPassword from "./Pages/ForgotPassword";
 import SignUp from "./Pages/SignUp";
+import DestinationDetails from './Pages/DestinationDetails';
+import BookingForm from "./Pages/BookingForm";
 const App = () => {
   const [user, setUser] = useState(null);
 
@@ -44,6 +46,8 @@ const App = () => {
       <Route path="/contactus" element={<ContactUs />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Forgot Password Route */}
+      <Route path="/destination-details" element={<DestinationDetails />} />
+      <Route path="/booking" element={<BookingForm />} />
       </Routes>
       <Footer />
     </Router>

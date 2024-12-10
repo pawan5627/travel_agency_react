@@ -1,7 +1,7 @@
 // destinationsData.js
 const destinations = [
     {
-        name: 'New York',
+        name: 'Washington',
         country: 'USA',
         days: 6,
         startDate: '2024-11-01',

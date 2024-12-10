@@ -116,7 +116,7 @@ const ContactUs = () => {
             </div>
             <div className="mb-4">
               <h3 className="font-semibold text-lg text-blue-600">Email:</h3>
-              <p className="text-gray-700">info@contourtravel.com</p>
+              <p className="text-gray-700">info@travello.com</p>
             </div>
             <div className="mb-4">
               <h3 className="font-semibold text-lg text-blue-600">Social Media:</h3>

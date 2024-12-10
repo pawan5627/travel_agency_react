@@ -5,7 +5,7 @@ const Filter = ({ destinations, onFilter }) => {
 
   const [filters, setFilters] = useState({
     country: 'all',
-    priceRange: 0,
+    priceRange: 1000,
     startDate: '',
     endDate: '',
   });
